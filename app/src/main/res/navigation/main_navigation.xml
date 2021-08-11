@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_navigation"
+            app:startDestination="@id/navigation_contributors">
+
+    <navigation android:id="@+id/navigation_contributors"
+                app:startDestination="@id/destination_contributor_list">
+        <deepLink app:uri="mfm://go?screen=contributor_list" />
+
+        <fragment android:id="@+id/destination_contributor_list"
+                  android:name="com.example.myapplication.ui.contributor_list.ContributorListFragment"
+                  tools:layout="@layout/fragment_contributor_list"
+                  android:label="@string/titleContributors">
+            <action android:id="@+id/action_destination_contributor_list_to_navigation_contributor_details"
+                    app:destination="@id/navigation_contributor_details"/>
+        </fragment>
+
+        <fragment
+                android:id="@+id/navigation_contributor_details"
+                android:name="com.example.myapplication.ui.contributor_info."
+                tools:layout="@layout/fragment_contributor_info"
+                android:label="@string/titleContributors" >
+            <action android:id="@+id/action_navigation_contributor_details_to_destination_contributor_list"
+                    app:destination="@id/destination_contributor_list"/>
+        </fragment>
+    </navigation>
+</navigation>
