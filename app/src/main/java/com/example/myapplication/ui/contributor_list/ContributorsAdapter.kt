@@ -9,8 +9,6 @@ import com.example.myapplication.R
 import com.example.myapplication.api.results.Contributor
 
 class ContributorsAdapter : ListAdapter<Contributor, RecyclerView.ViewHolder>(DataItemDiffCallback) {
-    private val isContributorItemEnabled = true
-
     var onClick: ((Contributor) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
@@ -23,7 +21,7 @@ class ContributorsAdapter : ListAdapter<Contributor, RecyclerView.ViewHolder>(Da
         when (holder) {
             is ContributorsViewHolder -> {
                 val contributor = getItem(position) as Contributor
-                holder.bind(contributor, isContributorItemEnabled) { onClick?.let { it(contributor) } }
+                holder.bind(contributor)
             }
         }
     }

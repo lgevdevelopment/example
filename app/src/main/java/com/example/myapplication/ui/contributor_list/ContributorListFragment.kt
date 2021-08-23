@@ -27,6 +27,7 @@ class ContributorListFragment : MainFragment<ContributorListViewModel>(R.layout.
 
         viewModel.contributors.observe(viewLifecycleOwner) {
             contributorsAdapter.submitList(it)
+            contributorsAdapter.notifyDataSetChanged()
         }
     }
 }
