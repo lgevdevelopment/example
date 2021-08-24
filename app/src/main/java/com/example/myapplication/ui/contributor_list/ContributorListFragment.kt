@@ -14,6 +14,8 @@ class ContributorListFragment : MainFragment<ContributorListViewModel>(R.layout.
     var contributorsAdapter = ContributorsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        activity?.title = "Contributors"
+
         val contributors = view.findViewById<RecyclerView>(R.id.contributors)
 
         contributors.adapter = contributorsAdapter.apply {

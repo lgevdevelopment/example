@@ -25,5 +25,4 @@ class ContributorListViewModel : MainViewModel(), IObtainContributorsListener {
     init {
         ObtainContributorsOperation.obtainContributors(this)
     }
-
 }

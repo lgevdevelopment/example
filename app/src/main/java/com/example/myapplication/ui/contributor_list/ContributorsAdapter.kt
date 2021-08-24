@@ -21,7 +21,7 @@ class ContributorsAdapter : ListAdapter<Contributor, RecyclerView.ViewHolder>(Da
         when (holder) {
             is ContributorsViewHolder -> {
                 val contributor = getItem(position) as Contributor
-                holder.bind(contributor)
+                holder.bind(contributor) { onClick?.let { it(contributor) } }
             }
         }
     }

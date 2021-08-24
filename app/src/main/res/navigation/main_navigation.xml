@@ -19,7 +19,7 @@
 
         <fragment
                 android:id="@+id/navigation_contributor_details"
-                android:name="com.example.myapplication.ui.contributor_info."
+                android:name="com.example.myapplication.ui.contributor_info.ContributorInfoFragment"
                 tools:layout="@layout/fragment_contributor_info"
                 android:label="@string/titleContributors" >
             <action android:id="@+id/action_navigation_contributor_details_to_destination_contributor_list"
